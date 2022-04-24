@@ -1,6 +1,7 @@
 package racingcar.car.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
@@ -23,5 +24,21 @@ public class Cars {
 
   public List<Car> getCars() {
     return cars;
+  }
+
+  public void sort() {
+    Collections.sort(cars);
+  }
+
+  public Car get(int index) {
+    return cars.get(index);
+  }
+
+  public int size() {
+    return cars.size();
+  }
+
+  public int getHighestScore() {
+    return cars.get(0).getHistorySize();
   }
 }

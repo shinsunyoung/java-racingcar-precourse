@@ -2,6 +2,7 @@ package racingcar.car.view;
 
 import java.util.List;
 import racingcar.car.model.Car;
+import racingcar.car.model.Cars;
 import racingcar.printer.Printer;
 
 public class RacingView {
@@ -11,8 +12,8 @@ public class RacingView {
     this.printer = printer;
   }
 
-  public void printRacingProcess(List<Car> cars) {
-    for (Car car : cars) {
+  public void printRacingProcess(Cars cars) {
+    for (Car car : cars.getCars()) {
       printer.print(String.format("%s : %s\n", car.getName(), car.getHistory()));
     }
     printer.print("\n");

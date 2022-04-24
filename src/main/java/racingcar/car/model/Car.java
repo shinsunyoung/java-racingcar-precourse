@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import racingcar.car.exception.CarNameLengthException;
 
-public class Car {
+public class Car implements Comparable<Car> {
   public static final int MOVE_CONDITION_START = 0;
   public static final int MOVE_CONDITION_END = 9;
   public static final int MOVE_CONDITION_STANDARD = 4;
@@ -30,6 +30,10 @@ public class Car {
     return String.join("", history);
   }
 
+  public int getHistorySize() {
+    return history.size();
+  }
+
   public void run() {
     int randomNumber = Randoms.pickNumberInRange(MOVE_CONDITION_START, MOVE_CONDITION_END);
 
@@ -47,5 +51,10 @@ public class Car {
     if (input.length() > NAME_MAX_LENGTH) {
       throw new CarNameLengthException();
     }
+  }
+
+  @Override
+  public int compareTo(Car o) {
+    return o.history.size() - history.size();
   }
 }

@@ -12,20 +12,22 @@ public class Racing {
     this.attemptCount = attemptCount;
   }
 
-  public void play(List<Car> cars, Printer printer) {
+  public Result play(Cars cars, Printer printer) {
     for (int i = 0; i < attemptCount; i++) {
       race(cars);
       printRacingProcess(cars, printer);
     }
+
+    return new Result(cars);
   }
 
-  private void printRacingProcess(List<Car> cars, Printer printer) {
+  private void printRacingProcess(Cars cars, Printer printer) {
     RacingView view = new RacingView(printer);
     view.printRacingProcess(cars);
   }
 
-  private void race(List<Car> cars) {
-    for (Car car : cars) {
+  private void race(Cars cars) {
+    for (Car car : cars.getCars()) {
       car.run();
     }
   }
