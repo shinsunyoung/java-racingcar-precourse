@@ -3,12 +3,12 @@ package racingcar.car.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarNames {
+public class Cars {
 
-  private final List<Car> carNames;
+  private final List<Car> cars;
 
-  public CarNames(String[] inputs) {
-    this.carNames = buildCarNames(inputs);
+  public Cars(String[] inputs) {
+    this.cars = buildCarNames(inputs);
   }
 
   private List<Car> buildCarNames(String[] inputs) {
@@ -19,5 +19,9 @@ public class CarNames {
     }
 
     return names;
+  }
+
+  public List<Car> getCars() {
+    return cars;
   }
 }

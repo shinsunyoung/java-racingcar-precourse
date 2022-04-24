@@ -1,20 +1,41 @@
 package racingcar.car.model;
 
+import camp.nextstep.edu.missionutils.Randoms;
+import java.util.ArrayList;
+import java.util.List;
 import racingcar.car.exception.CarNameLengthException;
 
 public class Car {
+  public static final int MOVE_CONDITION_START = 0;
+  public static final int MOVE_CONDITION_END = 9;
+  public static final int MOVE_CONDITION_STANDARD = 4;
 
   public static final int NAME_MAX_LENGTH = 5;
+  public static final String HISTORY_DELIMITER = "-";
 
   private final String name;
+  private final List<String> history;
 
   public Car(String name) {
     validate(name);
     this.name = name;
+    this.history = new ArrayList<>();
   }
 
   public String getName() {
     return name;
+  }
+
+  public String getHistory() {
+    return String.join("", history);
+  }
+
+  public void run() {
+    int randomNumber = Randoms.pickNumberInRange(MOVE_CONDITION_START, MOVE_CONDITION_END);
+
+    if (randomNumber >= MOVE_CONDITION_STANDARD) {
+      history.add(HISTORY_DELIMITER);
+    }
   }
 
   private void validate(String name) {
