@@ -26,10 +26,6 @@ public class Cars {
     return cars;
   }
 
-  public void sort() {
-    Collections.sort(cars);
-  }
-
   public Car get(int index) {
     return cars.get(index);
   }
@@ -39,6 +35,7 @@ public class Cars {
   }
 
   public int getHighestScore() {
+    Collections.sort(cars);
     return cars.get(0).getHistorySize();
   }
 }

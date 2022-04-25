@@ -19,10 +19,7 @@ public class Result {
   }
 
   private void calculateWinner(Cars cars) {
-    cars.sort();
-    winnerNames.add(cars.get(0).getName());
-
-    for (int i = 1; i < cars.size(); i++) {
+    for (int i = 0; i < cars.size(); i++) {
       addIfTied(cars.getHighestScore(), cars.get(i));
     }
   }

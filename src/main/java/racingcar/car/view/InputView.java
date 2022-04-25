@@ -17,10 +17,10 @@ public class InputView {
   }
 
 
-  public Racing readRacing() {
+  public int readAttemptCount() {
     printer.print(TRY_NUMBER_MESSAGE);
     String input = Console.readLine();
-    return new Racing(Integer.parseInt(input));
+    return Integer.parseInt(input);
   }
 
 
