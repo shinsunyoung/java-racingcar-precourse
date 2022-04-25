@@ -26,8 +26,13 @@ public class InputView {
 
   public Cars readCars() {
     printer.print(CAR_NAME_MESSAGE);
-    String input = Console.readLine();
-    return new Cars(input.split(NAME_DELIMITER));
-  }
+    try {
+      String input = Console.readLine();
+      return new Cars(input.split(NAME_DELIMITER));
+    } catch (IllegalArgumentException e) {
+      printer.print(e.getMessage());
+    }
 
+    return null;
+  }
 }

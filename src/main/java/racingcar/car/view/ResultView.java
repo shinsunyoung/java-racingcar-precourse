@@ -13,6 +13,6 @@ public class ResultView {
   }
 
   public void printResult(Result result) {
-    printer.print(String.format("최종 우승자 : %s", String.join(",", result.getWinnerNames())));
+    printer.print(String.format("최종 우승자: %s", String.join(",", result.getWinnerNames())));
   }
 }
