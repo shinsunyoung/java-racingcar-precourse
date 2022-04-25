@@ -2,7 +2,6 @@ package racingcar.car.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -36,5 +35,32 @@ class CarTest {
     }).isInstanceOf(IllegalArgumentException.class);
 
   }
+
+  @DisplayName("Car 객체는 값이 4 이상이면 전진한다.")
+  @Test
+  void runTest() {
+    // given
+    Car car = new Car("ab");
+
+    // when
+    car.runOrStopByNumber(4);
+
+    // then
+    assertThat(car.getHistorySize()).isEqualTo(1);
+  }
+
+  @DisplayName("Car 객체는 값이 3 이하면 멈춘.")
+  @Test
+  void stopTest() {
+    // given
+    Car car = new Car("ab");
+
+    // when
+    car.runOrStopByNumber(2);
+
+    // then
+    assertThat(car.getHistorySize()).isEqualTo(0);
+  }
+
 
 }

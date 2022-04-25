@@ -6,8 +6,7 @@ import java.util.List;
 import racingcar.car.exception.CarNameLengthException;
 
 public class Car implements Comparable<Car> {
-  public static final int MOVE_CONDITION_START = 0;
-  public static final int MOVE_CONDITION_END = 9;
+
   public static final int MOVE_CONDITION_STANDARD = 4;
 
   public static final int NAME_MAX_LENGTH = 5;
@@ -34,10 +33,8 @@ public class Car implements Comparable<Car> {
     return history.size();
   }
 
-  public void run() {
-    int randomNumber = Randoms.pickNumberInRange(MOVE_CONDITION_START, MOVE_CONDITION_END);
-
-    if (randomNumber >= MOVE_CONDITION_STANDARD) {
+  public void runOrStopByNumber(int number) {
+    if (number >= MOVE_CONDITION_STANDARD) {
       history.add(HISTORY_DELIMITER);
     }
   }
