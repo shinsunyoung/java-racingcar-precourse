@@ -1,13 +1,10 @@
 package racingcar.car.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import racingcar.car.exception.CarNameLengthException;
 
 public class Result {
-  private List<String> winnerNames;
+  private final List<String> winnerNames;
 
   public Result(Cars cars) {
     this.winnerNames = new ArrayList<>();
